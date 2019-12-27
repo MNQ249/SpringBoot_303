@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -28,8 +29,19 @@ public class Course {
     private String description;
 
     @NotNull
-    @Size(min=3)
+    @Min(3)
     private int credit;
+
+    public Course() {
+    }
+
+    public Course(String title, String instructor, String description, int credit) {
+        this.title = title;
+        this.instructor = instructor;
+        this.description = description;
+        this.credit = credit;
+    }
+
 
     public long getId() {
         return id;
