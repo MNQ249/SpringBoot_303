@@ -25,7 +25,7 @@ public class HomeController {
 
     @GetMapping("/add")
     public String courseForm(Model model){
-        model.addAttribute("courses", new Course());
+        model.addAttribute("course", new Course());
         return "courseform";
     }
 
